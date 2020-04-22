@@ -2,11 +2,15 @@
 function gen_imglist() {
     include('/usr/local/etc/drawingsdb_config.php');
     $dbh = new PDO($dbdsn, $dbuser, $dbpass);
-    $sql = "select id from drawings order by ctime desc limit 10;";
+    $sql = "select id,ctime from drawings order by ctime desc limit 10;";
     ob_start();
     foreach($dbh->query($sql) as $row) {
-        $imgid = $row['id'];
-        echo "<div class=\"drawing_box\"><img class="drawing_img" src=\"show_drawing?id=$imgid\"></div>";
+	$imgid = $row['id'];
+        $ts = $row['ctime'];
+	echo "<div class=\"drawing_box\">";
+	echo "<div>$ts</div>";
+	echo "<img class=\"drawing_img\" src=\"show_drawing.php?id=$imgid\">";
+	echo "</div>";
     }
     ob_end();
 }
