@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
 function get_imgname($imgid) {
     include('/usr/local/etc/drawingsdb_config.php');
     $dbh = new PDO($dbdsn, $dbuser, $dbpass);
-    $sql = "select name from drawings where id='$imgid';";
+    $sql = "select name from drawings where id=$imgid;";
     $rs = $dbh->query($sql)->fetchAll();
     if (count($rs)==1) {
         return $rs[0]['name'];
