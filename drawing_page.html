@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Drawing Page</title>
+        <script src="https://code.jquery.com/jquery-3.5.0.min.js"></script>
+        <script src="drawing.js"></script>
+        <script>
+            $(document).ready(()=>{
+              init_drawing();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="content" style="margin:0; padding:0; width:95%;">
+            <canvas id="myCanvas" style="border:1px solid #000000; padding:0; margin:0;">
+              Your browser does not support the HTML5 canvas tag.
+            </canvas>
+            <button id="saveBtn" style="width:100%;" onclick="save_drawing()">Save</button>
+            <form id="saveForm" method="post" action="save_drawing.php">
+              <input id="imgdata_field" type="hidden" name="imgdata">
+            </form>
+        </div>
+    </body>
+</html>
