@@ -2,6 +2,9 @@
 if (isset($_GET['id'])) {
     $imgid = $_GET['id'];
     $bname = get_imgname($imgid);
+    if (isset($_GET['type']) && $_GET['type']=='t') {
+        $bname = "th-$bname";
+    }
     if ($bname!=null) {
         header('Content-Type: image/jpeg');
         readfile('imgs/'.$bname);
