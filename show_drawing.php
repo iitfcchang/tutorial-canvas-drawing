@@ -3,7 +3,7 @@ if (isset($_GET['id'])) {
     $imgid = $_GET['id'];
     $bname = get_imgname($imgid);
     if ($bname!=null) {
-        header('Content-Type', 'image/jpeg');
+        header('Content-Type: image/jpeg');
         readfile('imgs/'.$bname);
     } else {
         die('No File');

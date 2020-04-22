@@ -11,7 +11,7 @@ $(CONFIG_DIR)/drawingsdb_config.php: drawingsdb_config.php
 $(WEB_DIR)/%: %
 	cp $< $@
 
-update: $(CONFIG_DIR)/drawingsdb_config.php $(WEB_DIR)/drawing.js $(WEB_DIR)/drawing_page.html $(WEB_DIR)/save_drawing.php
+update: $(CONFIG_DIR)/drawingsdb_config.php $(WEB_DIR)/drawing.js $(WEB_DIR)/drawing_page.html $(WEB_DIR)/save_drawing.php $(WEB_DIR)/show_drawing.php
 	@[ -d $(WEB_DIR)/imgs ] || mkdir $(WEB_DIR)/imgs
 
 dbinstall:
