@@ -9,7 +9,7 @@ function gen_imglist() {
         $ts = $row['ctime'];
 	echo "<div class=\"drawing_box\">";
 	echo "<div>$ts</div>";
-	echo "<img class=\"drawing_img\" src=\"show_drawing.php?id=$imgid\">";
+	echo "<a href=\"show_drawing.php?id=$imgid\"><img class=\"drawing_img\" src=\"show_drawing.php?id=$imgid&type=t\"></a>";
 	echo "</div>";
     }
     ob_end_flush();
