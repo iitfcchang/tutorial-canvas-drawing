@@ -12,7 +12,7 @@ function gen_imglist() {
 	echo "<img class=\"drawing_img\" src=\"show_drawing.php?id=$imgid\">";
 	echo "</div>";
     }
-    ob_end();
+    ob_end_flush();
 }
 ?>
 <!DOCTYPE html>
